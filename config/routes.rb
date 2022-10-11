@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   get 'events/index'
+
+  get 'users/:id' => 'users#show'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
@@ -12,4 +14,6 @@ Rails.application.routes.draw do
        sessions: 'users/sessions'
      }
    end
+
+
 end
