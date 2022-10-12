@@ -1,5 +1,9 @@
+<% @events.each do |event| %>
+<% event %>
+<% end %>
+
 <%= form_with model: @user do |form| %>
-  <%= form.label "attended_events:" %>
+  <%= form.label "Attend Event:" %>
   <%= form.select :attended_events,[["Berlin", "BE"], ["Chicago", "CHI"], ["Madrid", "MD"]] %>
 
   <%= form.submit %>
