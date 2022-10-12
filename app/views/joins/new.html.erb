@@ -1,0 +1,6 @@
+<%= form_with model: @user do |form| %>
+  <%= form.label "attended_events:" %>
+  <%= form.select :attended_events,[["Berlin", "BE"], ["Chicago", "CHI"], ["Madrid", "MD"]] %>
+
+  <%= form.submit %>
+<% end %>
