@@ -1,10 +1,12 @@
-<% @events.each do |event| %>
-<% event %>
-<% end %>
-
-<%= form_with model: @user do |form| %>
-  <%= form.label "Attend Event:" %>
-  <%= form.select :attended_events,[["Berlin", "BE"], ["Chicago", "CHI"], ["Madrid", "MD"]] %>
-
-  <%= form.submit %>
+<%= form_for(user_session_path) do |f| %>
+  <p>
+    <%= f.label :events %><br />
+    <% for event in Event.all %>
+      <%= check_box_tag "creator[creator_ids][]", event.id, current_user.created_events.include?(event) %>
+      <%=h Event.title %><br />
+    <% end %>
+  </p>
+  <div class="actions">
+    <%= f.submit 'Attend' %>
+  </div>
 <% end %>

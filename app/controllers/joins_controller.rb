@@ -1,11 +1,17 @@
 class JoinsController < ApplicationController
   def new
-    @Join = Join.new
+    @user = User.new
   end
 
   def create
-    @attendee = User.attended_events(event_params)
+    @user = User.attended_events(event_params)
   end
+
+  def index
+    @joins = Join.all
+  end
+
+
 
 
 
