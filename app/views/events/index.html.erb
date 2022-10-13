@@ -1,2 +1,4 @@
 <h1>Event</h1>
-<%= %>
+<% @events.each do |event| %>
+<%= event.title %>
+<% end %>
