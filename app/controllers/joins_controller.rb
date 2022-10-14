@@ -1,11 +1,11 @@
 class JoinsController < ApplicationController
   def new
-    @Join = Join.new
+    @join = Join.new
   end
 
   def create
-    @attended_event = User.attended_events(event_params)
-    if @attended_event.save
+    @join= Join.event(event_params)
+    if @join.save
       redirect_to root_path, notice: "You've selected event to attend"
     else
       redirect_to root_path, alert: "did not save"
@@ -14,7 +14,7 @@ class JoinsController < ApplicationController
 
   private
   def event_params
-    params.require(:user).permit(:title,:date)
+    params.require(:user).permit(:title)
   end
 
 end

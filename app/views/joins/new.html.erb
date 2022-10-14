@@ -1,5 +1,4 @@
-
-<%= form_with model: @attendee, data: { turbo: false} do |f| %>
+<%= form_with model: @joins, data: { turbo: false} do |f| %>
 <p>
   <%= f.label :attended_events, "Events:" %><br />
   <% for event in Event.all %>
