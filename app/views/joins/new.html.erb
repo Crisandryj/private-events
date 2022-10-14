@@ -1,12 +1,11 @@
-<%= form_for(user_session_path) do |f| %>
-  <p>
-    <%= f.label :events %><br />
-    <% for event in Event.all %>
-      <%= check_box_tag "creator[creator_ids][]", event.id, current_user.created_events.include?(event) %>
-      <%=h Event.title %><br />
-    <% end %>
-  </p>
-  <div class="actions">
-    <%= f.submit 'Attend' %>
-  </div>
+
+<%= form_with model: @attendee, data: { turbo: false} do |f| %>
+<p>
+  <%= f.label :attended_events, "Events:" %><br />
+  <% for event in Event.all %>
+    <%= f.check_box :attended_events %>
+    <%= event.title %><br />
+  <% end %>
+</p>
+  <%= f.submit %>
 <% end %>
