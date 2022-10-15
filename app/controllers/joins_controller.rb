@@ -1,8 +1,4 @@
 class JoinsController < ApplicationController
-  def new
-    @join = Join.new
-  end
-
   def create
     @join= Join.event(event_params)
     if @join.save

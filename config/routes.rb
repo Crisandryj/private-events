@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   # root "articles#index"
 
    root to: "events#index"
-   resource :join
+   resources :join
 
    Rails.application.routes.draw do
      devise_for :users, controllers: {
