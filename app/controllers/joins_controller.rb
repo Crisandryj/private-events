@@ -1,7 +1,7 @@
 class JoinsController < ApplicationController
   def create
-    @join= Join.event(event_params)
-    if @join.save
+    @event= current_user.attended_event(event_params)
+    if @event.save
       redirect_to root_path, notice: "You've selected event to attend"
     else
       redirect_to root_path, alert: "did not save"
