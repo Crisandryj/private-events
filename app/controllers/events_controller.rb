@@ -23,6 +23,11 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
   end
 
+ def update
+   @event = Event.find(params[:id])
+   current_user.attended_event = @event
+ end
+
   private
 
   def event_params

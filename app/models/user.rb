@@ -6,6 +6,6 @@ class User < ApplicationRecord
 
          has_many :joins
          has_many :created_events, foreign_key: "creator_id", class_name:"Event"
-         has_many :attended_events, through: "Join", source: "Event"
+         has_many :attended_events, through: "joins", source: "event"
 
 end
