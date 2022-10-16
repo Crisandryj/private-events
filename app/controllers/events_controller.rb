@@ -25,7 +25,8 @@ class EventsController < ApplicationController
 
  def update
    @event = Event.find(params[:id])
-   current_user.attended_event = @event
+   current_user.attended_events.includes(@event) unless
+     @event.attendee = current_user[:id]
  end
 
   private
