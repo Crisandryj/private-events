@@ -9,8 +9,7 @@ class EventsController < ApplicationController
   end
 
   def create
-    @creator = current_user
-    @event = @creator.created_events.create(event_params)
+    @event = current_user.created_events.build(event_params)
     if @event.save
     redirect_to root_path, notice: "Event was saved"
     else
@@ -24,10 +23,11 @@ class EventsController < ApplicationController
   end
 
  def update
-   @event = Event.find(params[:id])
-   current_user.attended_events.includes(@event) unless
-     @event.attendee = current_user[:id]
- end
+ #   @event = Event.find(params[:id])
+ #   current_user.update(attended_event:)
+ # end
+ raise params.inspect
+end
 
   private
 
