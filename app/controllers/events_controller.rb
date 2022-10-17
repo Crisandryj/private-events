@@ -23,10 +23,10 @@ class EventsController < ApplicationController
   end
 
  def update
- #   @event = Event.find(params[:id])
- #   current_user.update(attended_event:)
- # end
- raise params.inspect
+    @event = Event.find(params[:id])
+    @event.attendees << params[:event][:attendee]
+
+ # raise params.inspect
 end
 
   private
