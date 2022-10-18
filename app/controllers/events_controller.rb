@@ -24,10 +24,9 @@ class EventsController < ApplicationController
 
  def update
     @event = Event.find(params[:id])
-    @event.attendees << params[:event][:attendee]
-
+    @event.attendees << current_user
  # raise params.inspect
-end
+ end
 
   private
 

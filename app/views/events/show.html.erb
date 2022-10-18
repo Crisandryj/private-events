@@ -1,5 +1,5 @@
 <%= form_with model: @event, data: { turbo: false} do |f| %>
-  <%= f.label :attendee, @event.title %>
-  <%= f.check_box :attendee, { checked: true }, current_user.id, 'no'  %>
+  <%= f.label :attendees, @event.title %>
+  <%= f.check_box :attendees, { checked: true }, current_user.id, 'no'  %>
   <%= f.submit "Attend" %>
 <% end %>
