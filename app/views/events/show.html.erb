@@ -1,5 +1,1 @@
-<%= form_with model: @event, data: { turbo: false} do |f| %>
-  <%= f.label :attendees, @event.title %>
-  <%= f.check_box :attendees, { checked: true }, current_user.id, 'no'  %>
-  <%= f.submit "Attend" %>
-<% end %>
+ <%= button_to 'Attend', attend_event_path(@event), method: :post, confirm: 'really?' %>

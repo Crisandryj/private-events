@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
          has_many :joins
-         has_many :events, inverse_of: :creator
+         has_many :events, foreign_key: 'creator_id'
          has_many :attended_events, through: :joins, source: :event
 
 end
