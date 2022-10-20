@@ -1,2 +1,7 @@
 <h1>Event</h1>
+
+<% @events.each do |e|%>
+<li><%= e.title %></li>
+<% end %>
+
 <%= button_to "Logout", destroy_user_session_path, method: :delete  %>
