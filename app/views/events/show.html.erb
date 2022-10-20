@@ -3,3 +3,4 @@
 <p>DATE: <%= @event.date %></p>
 
  <%= button_to 'Attend', attend_event_path(@event), method: :post, confirm: 'really?' %>
+ <%= button_to 'Events', events_path, method: :get %>
