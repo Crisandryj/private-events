@@ -28,7 +28,12 @@ class EventsController < ApplicationController
 
  def update
     @event = Event.find(params[:id])
-    @event.attendees
+    @event.update(event_params)
+    if @event.save
+      redirect_to @event
+    else
+      render 'edit'
+    end
     # raise params.inspect
  end
 

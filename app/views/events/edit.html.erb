@@ -1,0 +1,9 @@
+<%= form_with model: @event,  data: { turbo: false} do |form| %>
+  <%= form.label "Title:" %>
+  <%= form.text_field :title %>
+
+  <%= form.label "Date:" %>
+  <%= form.date_select:date %>
+
+  <%= form.submit %>
+<% end %>

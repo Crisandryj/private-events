@@ -1,1 +1,5 @@
+<h3>EVENT:</h3>
+<p><%= @event.title %></p>
+<p>DATE: <%= @event.date %></p>
+
  <%= button_to 'Attend', attend_event_path(@event), method: :post, confirm: 'really?' %>
