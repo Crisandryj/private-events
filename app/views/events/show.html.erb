@@ -1,6 +1,9 @@
 <h3>EVENT:</h3>
 <p><%= @event.title %></p>
 <p>DATE: <%= @event.date %></p>
+<% @event.attendees.each do |e| %>
+<li><%=e.email %></li>
+<% end %>
 
  <%= button_to 'Attend', attend_event_path(@event), method: :post, confirm: 'really?' %>
  <%= button_to 'Events', events_path, method: :get %>
