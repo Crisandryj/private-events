@@ -8,11 +8,12 @@ Rails.application.routes.draw do
 
    root to: "events#index"
 
-   Rails.application.routes.draw do
-     devise_for :users, controllers: {
-       sessions: 'users/sessions'
-     }
-   end
+   get '/users/:id', to: "users#show"
+   
+   devise_for :users, controllers: {
+     sessions: 'users/sessions'
+   }
+
 
   resources :events do
   post 'attend', on: :member
