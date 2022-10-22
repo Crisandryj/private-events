@@ -1,7 +1,20 @@
+<%= render "events/nav" %>
 <h1>Event</h1>
 
-<% @events.future.each do |e|%>
-<li><%= e.title %></li>
-<% end %>
+<h2>Past Events</h2>
+<div>
+  <% @events.past.each do |e|%>
+  <li><%= link_to e.title, event_path(e), method: :get%>, <%= e.date%></li>
+  <% end %>
+</div>
 
-<%= button_to "Logout", destroy_user_session_path, method: :delete  %>
+<h2>Future Events</h2>
+<div>
+  <% @events.future.each do |e|%>
+  <li><%= link_to e.title, event_path(e), method: :get%>, <%= e.date%></li>
+  <% end %>
+</div>
+
+<div>
+  <%= button_to "Logout", destroy_user_session_path, method: :delete  %>
+</div>

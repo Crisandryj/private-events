@@ -1,0 +1,5 @@
+<nav>
+<%= button_to 'New Event', new_event_path, method: :get %>
+<%= button_to 'Events', events_path, method: :get %>
+<%= button_to "Logout", destroy_user_session_path, method: :delete  %>
+</nav>

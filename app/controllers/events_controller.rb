@@ -40,8 +40,11 @@ class EventsController < ApplicationController
   def attend
    @event = Event.find(params[:id])
    @event.attendees << current_user
-   @event.save
+   if @event.save
    redirect_to '/events'
+   else
+   redirect_to @event
+   end
    # raise params.inspect
   end
 

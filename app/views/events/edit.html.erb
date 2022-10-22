@@ -1,3 +1,4 @@
+<%= render "events/nav" %>
 <%= form_with model: @event,  data: { turbo: false} do |form| %>
   <%= form.label "Title:" %>
   <%= form.text_field :title %>
