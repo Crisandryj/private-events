@@ -14,7 +14,3 @@
   <li><%= link_to e.title, event_path(e), method: :get%>, <%= e.date%></li>
   <% end %>
 </div>
-
-<div>
-  <%= button_to "Logout", destroy_user_session_path, method: :delete  %>
-</div>

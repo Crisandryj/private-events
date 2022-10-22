@@ -8,8 +8,8 @@ Rails.application.routes.draw do
 
    root to: "events#index"
 
-   get '/users/:id', to: "users#show"
-   
+   # get '/users/:id', to: "users#show"
+
    devise_for :users, controllers: {
      sessions: 'users/sessions'
    }

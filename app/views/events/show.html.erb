@@ -1,15 +1,13 @@
 <%= render "events/nav" %>
 
-<h2>EVENT:</h2>
+<%= button_to 'Attend', attend_event_path(@event), method: :post, confirm: 'really?' %>
 
-<h3>Attendees</h3>
+<h2>EVENT:</h2>
 <div>
 <p><%= @event.title %></p>
 <p>DATE: <%= @event.date %></p>
+<h3>Attendees:</h3>
 <% @event.attendees.each do |e| %>
 <li><%=e.email %></li>
 <% end %>
 </div>
-
- <%= button_to 'Attend', attend_event_path(@event), method: :post, confirm: 'really?' %>
- <%= button_to 'Events', events_path, method: :get %>
