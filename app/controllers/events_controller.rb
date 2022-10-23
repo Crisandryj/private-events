@@ -23,7 +23,10 @@ class EventsController < ApplicationController
   end
 
   def edit
+    @creator =
+    if current_user = @creator
     @event = Event.find(params[:id])
+    end
   end
 
  def update
@@ -48,9 +51,23 @@ class EventsController < ApplicationController
    # raise params.inspect
   end
 
+  def destroy
+    @event = Event.find(params[:id])
+    @creator = @event.creator
+    if current_user = @creator
+    @event.destroy
+    redirect_to root_path
+    else
+      flash[:notice] = "Only owner can delete"
+    end
+  end
+
+
+
   private
 
   def event_params
     params.require(:event).permit(:title,:date)
   end
+
 end
