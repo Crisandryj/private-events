@@ -1,4 +1,7 @@
 <nav>
+  <% if current_user %>
+User:<%= current_user.email %>
+<% end %>
 <%= button_to 'Log In', new_user_session_path, method: :get %>
 <%= button_to 'New Event', new_event_path, method: :get %>
 <%= button_to 'Events', events_path, method: :get %>

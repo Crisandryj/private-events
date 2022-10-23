@@ -2,11 +2,13 @@
 
 <%= button_to 'Attend', attend_event_path(@event), method: :post, confirm: 'really?' %>
 <%= button_to 'Delete', event_path(@event), method: :delete, confirm: 'really?' %>
+<%= button_to 'Edit', edit_event_path(@event), method: :get, confirm: 'really?' %>
 
 <h2>EVENT:</h2>
 <div>
 <p><%= @event.title %></p>
 <p>DATE: <%= @event.date %></p>
+<p>Host: <%= @event.creator.email %></p>
 <h3>Attendees:</h3>
 <% @event.attendees.each do |e| %>
 <li><%=e.email %></li>
