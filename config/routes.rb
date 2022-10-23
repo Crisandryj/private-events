@@ -19,5 +19,9 @@ Rails.application.routes.draw do
   post 'attend', on: :member
   end
 
+  resources :events do
+  post 'unattend', on: :member
+  end
+
 
 end

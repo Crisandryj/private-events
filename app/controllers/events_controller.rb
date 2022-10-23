@@ -49,6 +49,13 @@ class EventsController < ApplicationController
     # raise params.inspect
   end
 
+  def unattend
+    @event = Event.find(params[:id])
+    @event.attendees.destroy(current_user)
+      redirect_to '/events'
+    # raise params.inspect
+  end
+
   def destroy
     @event = Event.find(params[:id])
     @creator = @event.creator
